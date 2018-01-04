@@ -15,3 +15,13 @@ void decode1(int *xp,int *yp,int *zp) {
 	movl	%ecx, (%rdx)
 	movl	%eax, (%rdi)
 	ret
+
+int simple(int *xp,int y) {
+    int t = *xp + y;
+    *xp = t;
+    return t;
+}
+    movl	(%rdi), %eax
+	addl	%esi, %eax
+	movl	%eax, (%rdi) //eax寄存器中默认储存着函数的返值
+	ret
